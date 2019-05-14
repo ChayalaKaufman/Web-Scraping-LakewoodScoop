@@ -1,0 +1,20 @@
+﻿@using WebScraping.Api
+@model IEnumerable<NewsItem>
+
+<table class="table table-hover table-striped table-bordered">
+    <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Image</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            <a href="@item.Url" target="_blank">@item.Title</a>
+        </td>
+        <td>@item.Date</td>
+        <td><img style="width: 450px; height: 281px;" src="@item.ImageUrl" /></td>
+    </tr>
+    }
+</table>
